@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>My TTRPG • SRD</title>
+<meta name="description" content="My TTRPG System Reference Document in a Wikidot-style layout." />
+<meta property="og:title" content="My TTRPG • SRD" />
+<meta property="og:description" content="Browse rules, classes, spells, monsters." />
+<meta property="og:type" content="website" />
+<style>
+  :root{
+    --bg:#0f1117; --panel:#141a24; --ink:#e7ecf3; --muted:#9aa6b2; --line:#212938; --accent:#6aa3ff;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f7fb; --panel:#ffffff; --ink:#0f1117; --muted:#5f6b7a; --line:#e6e9f0; --accent:#2b6cff; }
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0; color:var(--ink); background:var(--bg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container-wrap-wrap{}
+  .container-wrap{max-width:1200px; margin:0 auto; padding:0 16px}
+  .header-wrap{position:sticky; top:0; z-index:30; background:color-mix(in oklab, var(--bg) 90%, transparent); backdrop-filter:saturate(1.1) blur(8px); border-bottom:1px solid var(--line)}
+  .header{display:grid; grid-template-columns:1fr auto; align-items:center; gap:16px; padding:14px 0}
+  .site-title h1{margin:0; font-size:22px}
+  .site-title h2{margin:2px 0 0 0; font-size:14px; color:var(--muted); font-weight:500}
+  .login-status{justify-self:end; color:var(--muted); font-size:14px}
+  .search-box{margin-top:10px; grid-column:1/-1; display:flex; gap:10px}
+  .search-box input{flex:1; padding:10px 12px; border:1px solid var(--line); border-radius:10px; background:var(--panel); color:var(--ink)}
+  .top-bar-wrap{border-top:1px solid var(--line)}
+  .top-bar{display:flex; gap:12px; align-items:center; padding:8px 0}
+  .navbar-brand{font-weight:600}
+  .top-links{display:flex; gap:10px; flex-wrap:wrap}
+  .top-links a{padding:6px 10px; border-radius:8px}
+  .content-wrap{padding:20px 0 60px}
+  .content{display:grid; grid-template-columns:260px 1fr; gap:20px}
+  @media (max-width:980px){ .content{grid-template-columns:1fr} }
+  .side-bar-wrap{position:sticky; top:92px; align-self:start}
+  .side-bar{background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  .side-bar-header{padding:10px 12px; border-bottom:1px solid var(--line); font-weight:600}
+  .side-bar nav a{display:block; padding:8px 12px}
+  .side-bar nav a:hover{background:var(--line)}
+  .main-content-wrap{min-width:0}
+  .main-content{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px}
+  .page-title{font-size:24px; font-weight:700; margin:0 0 6px 0}
+  .breadcrumbs{color:var(--muted); font-size:13px; margin-bottom:10px}
+  .page-tags{margin-top:14px; display:flex; gap:8px; flex-wrap:wrap}
+  .tag{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:3px 8px; border-radius:999px}
+  .page-info-break{height:1px; background:var(--line); margin:16px 0}
+  .page-options-container{display:flex; gap:10px; flex-wrap:wrap}
+  .btn{padding:8px 12px; border:1px solid var(--line); background:var(--panel); color:var(--ink); border-radius:10px; cursor:pointer}
+  .btn:hover{filter:brightness(1.05)}
+  .footer-wrap{border-top:1px solid var(--line); padding:20px 0; color:var(--muted)}
+  .license-area{margin-top:6px; font-size:12px}
+  h1,h2,h3{line-height:1.25; scroll-margin-top:100px}
+  h2{margin-top:22px}
+  .hr{height:1px; background:var(--line); margin:12px 0}
+  .result-pill{font-size:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+<a id="page-top"></a>
+<div class="container-wrap-wrap">
+  <div class="container-wrap">
+
+    <!-- Header -->
+    <header class="header-wrap" role="banner">
+      <div class="container header">
+        <div class="site-title">
+          <h1><a href="#home"><span id="site_name">My TTRPG</span></a></h1>
+          <h2><span id="site_subtitle">5.24e System Reference</span></h2>
+        </div>
+        <div class="login-status">Public site</div>
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="Search rules, spells, monsters" />
+          <span class="result-pill" id="resultCount">0 results</span>
+        </div>
+      </div>
+
+      <!-- Top bar -->
+      <nav class="top-bar-wrap" role="navigation">
+        <div class="container top-bar">
+          <a class="navbar-brand" href="#home">Home</a>
+          <div class="top-links">
+            <a href="#about">About</a>
+            <a href="#layout">Layout</a>
+            <a href="#membership">Membership</a>
+            <a href="#user-guide">User Guide</a>
+            <a href="#help">Help Docs</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-extra-div-1"><span></span></div>
+      <div class="header-extra-div-2"><span></span></div>
+      <div class="header-extra-div-3"><span></span></div>
+    </header>
+
+    <!-- Main -->
+    <main class="content-wrap" role="main">
+      <div class="container content">
+        <!-- Sidebar -->
+        <nav class="side-bar-wrap">
+          <div class="side-bar">
+            <div class="side-bar-header">Site Navigation</div>
+            <nav>
+              <a href="#user-guide">User Guide</a>
+              <a href="#first-time">First Time User</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+              <a href="#legal">Legal</a>
+              <a href="#forums">Discussion Forums</a>
+              <a href="#members">Members</a>
+              <div class="hr"></div>
+              <a href="#core-rules">Core Rules</a>
+              <a href="#classes">Classes</a>
+              <a href="#spells">Spells</a>
+              <a href="#monsters">Monsters</a>
+              <a href="#items">Items</a>
+              <a href="#gm-tools">GM Tools</a>
+            </nav>
+          </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="main-content-wrap">
+          <div class="main-content">
+            <div class="page-title" id="page_title">Home</div>
+            <div class="breadcrumbs" id="breadcrumbs">Home</div>
+            <div id="content"><p>Welcome. Pick a page in the left menu.</p></div>
+
+            <div class="page-tags" id="tags"></div>
+            <div class="page-info-break"></div>
+            <div class="page-options-container">
+              <button class="btn" onclick="scrollToTop()">Back to Top</button>
+              <button class="btn" onclick="copyLink()">Copy Page Link</button>
+            </div>
+            <div id="action_area"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wrap" role="contentinfo">
+      <div class="container footer">
+        <div id="footer">
+          Help | Terms of Service | Privacy | Report a bug
+        </div>
+        <div class="license-area" id="license_text">
+          Unless stated otherwise, content here is licensed under
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+        </div>
+      </div>
+      <div class="extrac-div-1"><span></span></div>
+      <div class="extrac-div-2"><span></span></div>
+      <div class="extrac-div-3"><span></span></div>
+    </footer>
+
+  </div>
+  <div class="extra-div-1"><span></span></div>
+  <div class="extra-div-2"><span></span></div>
+  <div class="extra-div-3"><span></span></div>
+  <div class="extra-div-4"><span></span></div>
+  <div class="extra-div-5"><span></span></div>
+  <div class="extra-div-6"><span></span></div>
+</div>
+
+<script>
+  // Simple router and page store
+  const PAGES = {
+    "home": {
+      title: "Home",
+      tags: ["index"],
+      html: `
+        <p>This is a Wikidot-style static site you control. Use the left navigation to browse.</p>
+        <p>Deep link any page, for example <code>#spells</code> or <code>#classes/ranger</code>.</p>
+        <h2 id="news">News</h2>
+        <p>Add your latest rules notes here.</p>
+      `
+    },
+    "about": {
+      title: "About",
+      tags: ["meta"],
+      html: `
+        <p>This site mirrors the layout of a classic Wikidot. No accounts, no ads, fast to load.</p>
+        <p>Edit this file to customize the header, sidebar, and footer.</p>
+      `
+    },
+    "layout": {
+      title: "HTML Layout",
+      tags: ["meta"],
+      html: `
+        <p>The page uses a header, top bar, sidebar, main content, and footer. Headings get anchor links for sharing.</p>
+        <ul>
+          <li>Header: title, subtitle, search</li>
+          <li>Top bar: quick links</li>
+          <li>Sidebar: section navigation</li>
+          <li>Main: breadcrumbs, content, tags, options</li>
+        </ul>
+      `
+    },
+    "membership": {
+      title: "Membership",
+      tags: ["meta"],
+      html: `<p>Public viewing only. To contribute, send changes to me and I will publish.</p>`
+    },
+    "user-guide": {
+      title: "User Guide",
+      tags: ["help"],
+      html: `
+        <p>Use the sidebar to jump between sections. Use the top search to filter pages by title and text.</p>
+      `
+    },
+    "help": {
+      title: "Help Docs",
+      tags: ["help"],
+      html: `<p>Questions or bugs, email me.</p>`
+    },
+    "contact": {
+      title: "Contact",
+      tags: ["meta"],
+      html: `<p>Contact: you@example.com</p>`
+    },
+    "legal": {
+      title: "Legal",
+      tags: ["meta"],
+      html: `
+        <p>State your license here. If you include SRD content, add the required attribution lines.</p>
+        <p class="muted tiny">Example: Portions of this work are derived from the System Reference Document and are © their respective owners, used under CC BY 4.0.</p>
+      `
+    },
+    "forums": { title: "Discussion Forums", tags: ["meta"], html: `<p>Link your community Discord or forum.</p>` },
+    "members": { title: "Members", tags: ["meta"], html: `<p>Contributors list.</p>` },
+
+    /* Your SRD sections */
+    "core-rules": {
+      title: "Core Rules",
+      tags: ["rules","core"],
+      html: `
+        <h2 id="turn-structure">Turn Structure</h2>
+        <ol><li>Start of Turn</li><li>Spend Action Points</li><li>End of Turn</li></ol>
+        <h2 id="action-points">Action Points</h2>
+        <p>You have 3 or 4 AP each turn. Moving up to your Speed costs 1 AP. Abilities that spend stamina or mana cost 2 AP.</p>
+      `
+    },
+    "classes": {
+      title: "Classes",
+      tags: ["classes"],
+      html: `
+        <p>Choose a class to view features.</p>
+        <ul>
+          <li><a href="#classes/ranger">Ranger</a></li>
+          <li><a href="#classes/guardian">Guardian</a></li>
+        </ul>
+      `
+    },
+    "classes/ranger": {
+      title: "Ranger",
+      tags: ["classes","ranger"],
+      html: `
+        <h2 id="snapshot">Snapshot</h2>
+        <div style="border:1px solid var(--line); border-radius:12px; overflow:hidden">
+          <div style="padding:10px 12px; border-bottom:1px solid var(--line); font-weight:600">Ranger</div>
+          <dl style="display:grid; grid-template-columns:130px 1fr; margin:0">
+            <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">Hit Die</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">d10</dd>
+            <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">Primary</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">Coordination or Vigor</dd>
+            <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">Signature</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">Primal Instinct, Marked Foe</dd>
+          </dl>
+        </div>
+        <h2 id="features">Features by Level</h2>
+        <p>Add your feature table here.</p>
+      `
+    },
+    "classes/guardian": {
+      title: "Guardian",
+      tags: ["classes","guardian"],
+      html: `
+        <h2 id="snapshot">Snapshot</h2>
+        <p>Frontline protector who spends Resolve to shield allies.</p>
+      `
+    },
+    "spells": {
+      title: "Spells",
+      tags: ["spells"],
+      html: `
+        <p>Lists and links for your spells. Example entries below.</p>
+        <ul>
+          <li><a href="#spells/guiding-spark">Guiding Spark</a></li>
+          <li><a href="#spells/tanglefoot">Tanglefoot</a></li>
+        </ul>
+      `
+    },
+    "spells/guiding-spark": {
+      title: "Guiding Spark",
+      tags: ["spells","cantrip","evocation"],
+      html: `
+        <div style="display:grid; gap:14px; grid-template-columns:280px 1fr">
+          <div style="border:1px solid var(--line); border-radius:12px; overflow:hidden">
+            <div style="padding:10px 12px; border-bottom:1px solid var(--line); font-weight:600">Guiding Spark</div>
+            <dl style="display:grid; grid-template-columns:120px 1fr; margin:0">
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">Level</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">Cantrip</dd>
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">School</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">Evocation</dd>
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">Action</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">1 AP</dd>
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">Range</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">60 ft</dd>
+            </dl>
+          </div>
+          <div>
+            <p><em>A dart of light deals 1d8 radiant. Scales by tier.</em></p>
+            <p>Rules text goes here.</p>
+          </div>
+        </div>
+      `
+    },
+    "spells/tanglefoot": {
+      title: "Tanglefoot",
+      tags: ["spells","level-1","conjuration"],
+      html: `<p>Sticky vines slow movement in an area. Full spell text here.</p>`
+    },
+    "monsters": {
+      title: "Monsters",
+      tags: ["monsters"],
+      html: `
+        <p>Index of monsters.</p>
+        <ul>
+          <li><a href="#monsters/goblin-skirmisher">Goblin Skirmisher</a></li>
+          <li><a href="#monsters/void-apprentice">Void Apprentice</a></li>
+        </ul>
+      `
+    },
+    "monsters/goblin-skirmisher": {
+      title: "Goblin Skirmisher",
+      tags: ["monsters","goblin","skirmisher"],
+      html: `
+        <div style="display:grid; gap:14px; grid-template-columns:280px 1fr">
+          <div style="border:1px solid var(--line); border-radius:12px; overflow:hidden">
+            <div style="padding:10px 12px; border-bottom:1px solid var(--line); font-weight:600">Stats</div>
+            <dl style="display:grid; grid-template-columns:120px 1fr; margin:0">
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">CR</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">1/2</dd>
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">AC</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">13</dd>
+              <dt style="padding:10px 12px; border-bottom:1px solid var(--line); color:var(--muted)">HP</dt><dd style="padding:10px 12px; border-bottom:1px solid var(--line)">11</dd>
+            </dl>
+          </div>
+          <div>
+            <h3>Traits</h3>
+            <ul><li>Nimble Escape</li></ul>
+            <h3>Attacks</h3>
+            <ul><li>Scimitar +4, 1d6+2</li><li>Shortbow +4, 1d6+2</li></ul>
+          </div>
+        </div>
+      `
+    },
+    "monsters/void-apprentice": { title:"Void Apprentice", tags:["monsters","void"], html:`<p>Aberration caster. Add your statblock.</p>` },
+    "items": { title:"Items", tags:["items"], html:`<p>Weapons, armor, and gear.</p>` },
+    "gm-tools": { title:"GM Tools", tags:["gm"], html:`<p>Encounter building, travel, treasure tables.</p>` },
+    "first-time": { title:"First Time User", tags:["help"], html:`<p>How to use this site.</p>` }
+  };
+
+  const $ = (sel, el=document)=>el.querySelector(sel);
+  const $$ = (sel, el=document)=>[...el.querySelectorAll(sel)];
+  const slug = s => s.toLowerCase().trim().replace(/[^\w\s/-]/g,'').replace(/\s+/g,'-');
+
+  function setPage(hash){
+    const key = (hash||"#home").slice(1);
+    const page = PAGES[key] || PAGES["home"];
+    $("#page_title").textContent = page.title;
+    $("#breadcrumbs").textContent = key.split("/").map(x=>x||"Home").join(" › ");
+    $("#content").innerHTML = page.html;
+    const tags = page.tags||[];
+    const tagWrap = $("#page_tags");
+    const tagDiv = $("#tags");
+    tagDiv.innerHTML = tags.map(t=>`<span class="tag">${t}</span>`).join("");
+    addAnchors();
+    updateCount();
+  }
+
+  function copyLink(){
+    navigator.clipboard.writeText(location.href).then(()=>alert("Link copied"));
+  }
+  function scrollToTop(){ window.scrollTo({top:0, behavior:"smooth"}); }
+
+  // Add tiny anchor links to h2
+  function addAnchors(){
+    $$("h2", $("#content")).forEach(h=>{
+      if(!h.id) h.id = slug(h.textContent);
+      if(!h.querySelector(".anchor")){
+        const a = document.createElement("a");
+        a.textContent = " #";
+        a.className = "anchor";
+        a.href = location.hash.split("#")[1] ? `#${location.hash.split("#")[1].split("?")[0]}#${h.id}` : `#${h.id}`;
+        h.appendChild(a);
+      }
+    });
+  }
+
+  // Search across titles and html text
+  const searchInput = $("#searchInput");
+  function updateCount(){
+    const q = (searchInput.value||"").toLowerCase().trim();
+    if(!q){ $("#resultCount").textContent = "0 results"; return; }
+    const list = Object.entries(PAGES).filter(([k,v])=>{
+      const hay = (v.title+" "+v.html).toLowerCase();
+      return hay.includes(q);
+    });
+    $("#resultCount").textContent = `${list.length} results`;
+  }
+  searchInput.addEventListener("input", ()=>{
+    const q = searchInput.value.toLowerCase().trim();
+    if(!q) return updateCount();
+    // Show the first match
+    const hit = Object.entries(PAGES).find(([k,v])=> (v.title+" "+v.html).toLowerCase().includes(q));
+    if(hit){ location.hash = "#"+hit[0]; }
+    updateCount();
+  });
+
+  window.addEventListener("hashchange", ()=>setPage(location.hash));
+  setPage(location.hash||"#home");
+</script>
+</body>
+</html>
